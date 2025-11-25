@@ -49,12 +49,12 @@ jobs:
               "path": ".",
               "url": "https://github.com/${{ github.repository }}/releases/download/'"$NEW_VERSION"'/java-fx-demo-0.0.1-SNAPSHOT.jar"
             }
-         ]'
+          ]'
           
-         curl -L \
-           -X PATCH \
-           -H "Accept: application/vnd.github+json" \
-           -H "Authorization: Bearer $GIST_TOKEN" \
-           -H "X-GitHub-Api-Version: 2022-11-28" \
-           https://api.github.com/gists/$GIST_ID \
-           -d "{\"files\":{\"config.json\":{\"content\": $(echo $NEW_JSON | jq -R .) }}}"
+          curl -L \
+            -X PATCH \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GIST_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/gists/$GIST_ID \
+            -d "{\"files\":{\"config.json\":{\"content\": $(echo $NEW_JSON | jq -R .) }}}"
