@@ -37,18 +37,18 @@ jobs:
           NEW_VERSION: ${{ github.ref_name }}
         run: |
           NEW_JSON='[
-          { 
-            "type" : "save",
-            "name" : "DemoFx.exe",
-            "path" : ".",
-            "url" : "https://github.com/${{ github.repository }}/releases/download/'"$NEW_VERSION"'/DemoFx.exe"
-          },
-          {
-            "type" : "save",
-            "name": "java-fx-demo-0.0.1-SNAPSHOT.jar",
-            "path": ".",
-            "url": "https://github.com/${{ github.repository }}/releases/download/'"$NEW_VERSION"'/java-fx-demo-0.0.1-SNAPSHOT.jar"
-         }
+            { 
+              "type" : "save",
+              "name" : "DemoFx.exe",
+              "path" : ".",
+              "url" : "https://github.com/${{ github.repository }}/releases/download/'"$NEW_VERSION"'/DemoFx.exe"
+            },
+            {
+              "type" : "save",
+              "name": "java-fx-demo-0.0.1-SNAPSHOT.jar",
+              "path": ".",
+              "url": "https://github.com/${{ github.repository }}/releases/download/'"$NEW_VERSION"'/java-fx-demo-0.0.1-SNAPSHOT.jar"
+            }
          ]'
           
          curl -L \
